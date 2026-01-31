@@ -370,14 +370,14 @@ button:focus {
   }
 
   .game-container {
-    flex: 1;
+    flex: 0 0 auto;
     min-height: 0;
   }
 
   .board {
     width: 100%;
     max-width: 100%;
-    height: 56svh;
+    height: 50svh;   
     max-height: 56svh;
     aspect-ratio: unset;
     grid-template-columns: repeat(auto-fill, minmax(34px, 1fr));
