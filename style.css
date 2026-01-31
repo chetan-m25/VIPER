@@ -128,8 +128,9 @@ section {
 .controls {
   display: flex;
   justify-content: center;
-  gap: 750px;
+  gap: 10px;
   flex-shrink: 0;
+  width: 100%;
 }
 
 .control-btn {
@@ -385,7 +386,7 @@ section {
     background-color: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: none;
-    margin-top: 1px;
+    margin-top: 0;
   }
 
   .control-btn:active {
