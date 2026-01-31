@@ -8,7 +8,7 @@ html,
 body {
   height: 100%;
   width: 100%;
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
 :root {
@@ -142,6 +142,18 @@ section {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
+}
+
+.control-btn,
+button {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+.control-btn:focus,
+button:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .control-btn-highlight {
@@ -366,7 +378,7 @@ section {
     width: 100%;
     max-width: 100%;
     height: auto;
-    max-height: 100%;
+    max-height: calc(100svh - 260px);
     aspect-ratio: 6 / 10;
     grid-template-columns: repeat(auto-fill, minmax(35px, 1fr));
     grid-template-rows: repeat(auto-fill, minmax(35px, 1fr));
