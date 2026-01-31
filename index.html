@@ -1,45 +1,128 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake Game</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>V I P E R</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <main>
-        <section>
-            <div class="infos">
-                <div class="info">
-                    <h3>High Score:
-                        <span id="high-score">0</span>
-                    </h3>
-                </div>
-                <div class="info">
-                    <h3>Score:
-                        <span id="score">0</span>
-                    </h3>
-                </div>
-                <div class="info">
-                    <h3>Time:
-                        <span id="time">00-00</span>
-                    </h3>
-                </div>
-            </div>
-            <div class="board">
-            </div>
-        </section>
-        <div class="modal">
-            <div class="start-game">
-                <h3>Welcome to the Snake Game</h3>
-                <button class="btn btn-start">Start Game</button>
-            </div>
-            <div class="game-over">
-                <h3>Game Over</h3>
-                <button class="btn btn-restart">Restart Game</button>
-            </div>
+      <section>
+        <div class="infos">
+          <div class="info">
+            <h3>High Score: <span id="high-score">0</span></h3>
+          </div>
+          <div class="info">
+            <h3>Score: <span id="score">0</span></h3>
+          </div>
+          <div class="info">
+            <h3>Time: <span id="time">0-0</span></h3>
+          </div>
         </div>
+        <div class="game-container">
+          <div class="board"></div>
+        </div>
+        <div class="controls">
+          <button
+            class="control-btn control-btn-highlight"
+            id="pause-btn"
+            style="display: none"
+          >
+            Pause
+          </button>
+          <button class="control-btn control-btn-highlight" id="rules-btn">
+            Rules
+          </button>
+        </div>
+        <div class="mobile-controls" id="mobile-controls">
+          <div class="dpad">
+            <button class="dpad-btn dpad-up" id="btn-up">▲</button>
+            <div class="dpad-middle">
+              <button class="dpad-btn dpad-left" id="btn-left">◄</button>
+              <div class="dpad-center"></div>
+              <button class="dpad-btn dpad-right" id="btn-right">►</button>
+            </div>
+            <button class="dpad-btn dpad-down" id="btn-down">▼</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="modal" id="start-modal">
+        <div class="modal-content game-modal">
+          <h1 class="game-title">VIPER</h1>
+          <div class="start-content">
+            <p class="game-subtitle">Press Start or use Arrow keys to begin.</p>
+            <div class="basic-rules-list desktop-rules">
+              <p class="snake"><strong>The Snake Game </strong></p>
+              <p>< Use Arrow keys to control ></Use></p>
+              <p>< Eat Red Food to grow ></Eat></p>
+              <p>< Avoid walls and your body ></p>
+              <p class="space-hint">< Press SPACE to pause ></p>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-start">Start</button>
+        </div>
+      </div>
+
+      <div class="modal" id="pause-modal" style="display: none">
+        <div class="modal-content game-modal">
+          <h1 class="game-title">Paused</h1>
+          <p class="game-subtitle desktop-only">
+            Press any Arrow key to resume
+          </p>
+          <button class="btn btn-primary btn-resume">Resume</button>
+        </div>
+      </div>
+
+      <div class="modal" id="gameover-modal" style="display: none">
+        <div class="modal-content game-modal">
+          <h1 class="game-title">Game Over</h1>
+          <p class="game-subtitle">
+            Final Score: <span id="final-score">0</span>
+          </p>
+          <button class="btn btn-primary btn-restart">Restart Game</button>
+        </div>
+      </div>
+
+      <div class="modal" id="rules-modal" style="display: none">
+        <div class="modal-content rules-content">
+          <h1 class="game-title">How to Play</h1>
+          <div class="rules-list">
+            <div class="rule-item">
+              <div class="rule-text">
+                <h3>Controls</h3>
+                <p><strong>• </strong> Laptop: Use Arrow keys (↑ ↓ ← →)</p>
+                <p><strong>• </strong> Laptop: Press SPACE to pause</p>
+                <p><strong>• </strong> Mobile: Use on-screen buttons</p>
+              </div>
+            </div>
+            <div class="rule-item">
+              <div class="rule-text">
+                <h3>Objective</h3>
+                <p>Eat Red Food to grow and earn points</p>
+                <p>Each food = 10 points</p>
+              </div>
+            </div>
+            <div class="rule-item">
+              <div class="rule-text">
+                <h3>Game Over</h3>
+                <p>• Hit the wall</p>
+                <p>• Bite your own body</p>
+              </div>
+            </div>
+            <div class="rule-item">
+              <div class="rule-text">
+                <h3>Tips</h3>
+                <p>Speed increases as you eat more</p>
+                <p>Plan ahead to avoid traps</p>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-close-rules">Close</button>
+        </div>
+      </div>
     </main>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
